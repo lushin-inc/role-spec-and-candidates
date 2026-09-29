@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hubexo OMG Hiring</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap">
+<style>
+[hidden]{display:none!important}
+img{max-width:100%}
+:root{
+  --stable:#21245C; --fresh:#00ADED; --energetic:#0045C2; --limitless:#FAB040; --fireball:#F05A28;
+  --bg:#F4F5FA; --surface:#FFFFFF; --surface-2:#EEF0F7;
+  --ink:#1B1E4B; --ink-2:#4B4F7A; --ink-3:#7A7EA3;
+  --line:#DDE0EC; --line-2:#C5C9DD;
+  --chip:#EEF0F8; --chip-ink:#21245C;
+  --diff:#FFF0D6; --diff-edge:#F1A33A; --diff-ink:#4F3300;
+  --rec:#1E9E4A; --woc:#FAB040; --nr:#E34554;
+  --sel:#21245C; --sel-ink:#FFFFFF; --diff-sel:#B86E00;
+  --rec-bg:#D4EDDA; --rec-ink:#1E6B34; --woc-bg:#FDE6BF; --woc-ink:#7A4B00; --nr-bg:#F8D7DA; --nr-ink:#A61B29; --link:#0045C2;
+  --nav-bg:rgba(255,255,255,.88); --nav-active-bg:#21245C; --nav-active-ink:#FFFFFF;
+  --pill-strong-bg:#0045C2; --pill-strong-ink:#FFFFFF;
+  --pill-push-bg:#F05A28; --pill-push-ink:#FFFFFF;
+  --pill-low-bg:#FAB040; --pill-low-ink:#21245C;
+  --pill-idle-bg:#E4E6EF; --pill-idle-ink:#21245C;
+  --grad-a:radial-gradient(140% 170% at 100% 0%, #00ADED 0%, #21245C 62%);
+  --grad-b:radial-gradient(140% 170% at 100% 0%, #00ADED 0%, #0045C2 62%);
+  --glow-a:0 22px 44px -22px rgba(33,36,92,.7);
+  --glow-b:0 22px 44px -22px rgba(0,69,194,.7);
+  --logo-light:block; --logo-dark:none;
+  --font:'Poppins', Arial, sans-serif;
+}
+:root.theme-dark{
+  color-scheme:dark;
+  --bg:#0C0E29; --surface:#14173D; --surface-2:#1B1F4C;
+  --ink:#ECEDF8; --ink-2:#B3B6D8; --ink-3:#8689B5;
+  --line:#262A5C; --line-2:#363B74;
+  --chip:#232759; --chip-ink:#E3E5F7;
+  --diff:#3B3019; --diff-edge:#FAB040; --diff-ink:#FFE4B5;
+  --rec:#3CC46C; --woc:#FAB040; --nr:#F0707C;
+    --sel:#00ADED; --sel-ink:#0C0E29; --diff-sel:#FAB040;
+    --rec-bg:#173A24; --rec-ink:#8BE3A8; --woc-bg:#3B3019; --woc-ink:#FFD58A; --nr-bg:#3F1C22; --nr-ink:#FF9CA6; --link:#5FC8F5;
+  --nav-bg:rgba(12,14,41,.88); --nav-active-bg:#00ADED; --nav-active-ink:#0C0E29;
+  --pill-idle-bg:#2A2E63; --pill-idle-ink:#E3E5F7;
+  --glow-a:0 22px 44px -22px rgba(0,173,237,.35);
+  --glow-b:0 22px 44px -22px rgba(0,173,237,.45);
+  --logo-light:none; --logo-dark:block;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--fresh);outline-offset:2px;border-radius:6px}
+h1,h2,h3{text-wrap:balance;margin:0}
+ul{margin:0;padding:0}
+
+/* Nav */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--nav-bg);backdrop-filter:saturate(1.4) blur(10px);-webkit-backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1480px;margin:0 auto;padding-inline:16px;padding-block:10px;display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{height:22px;width:auto}
+.logo.l{display:var(--logo-light)} .logo.d{display:var(--logo-dark)}
+.theme-btn{margin-left:auto;width:42px;height:42px;border-radius:999px;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);display:grid;place-items:center;cursor:pointer;transition:background .15s,color .15s}
+.theme-btn:hover{color:var(--ink);background:var(--surface)}
+.theme-btn svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.theme-btn .i-sun{display:none}
+.theme-dark .theme-btn .i-sun{display:block}
+.theme-dark .theme-btn .i-moon{display:none}
+.nav-toggle{display:inline-flex;background:var(--surface-2);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+.nav-toggle a{text-decoration:none;font-weight:500;font-size:14px;color:var(--ink-2);padding:9px 22px;border-radius:999px;transition:background .15s,color .15s;white-space:nowrap}
+.nav-toggle a:hover{color:var(--ink)}
+.nav-toggle a[aria-current="page"]{background:var(--nav-active-bg);color:var(--nav-active-ink)}
+
+.wrap{margin:0 auto;padding-inline:16px}
+.wrap.narrow{max-width:920px}
+.wrap.wide{max-width:1480px}
+.wrap.mid{max-width:1120px}
+.stack{display:flex;flex-direction:column;gap:20px;padding-block:24px 64px}
+
+/* Section band */
+.band{color:#fff}
+.band-a{background:var(--grad-a)} .band-b{background:var(--grad-b)}
+.band .wrap{padding-block:26px 28px;display:flex;flex-direction:column;gap:2px}
+.band-ctx{font-size:15px;font-weight:300;opacity:.85}
+.band-title{font-size:28px;font-weight:500;letter-spacing:-.005em}
+
+/* Toolbar */
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px}
+.seg{display:inline-flex;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:4px;gap:2px}
+.seg button{font:inherit;font-size:13px;font-weight:500;border:0;background:transparent;color:var(--ink-2);padding:8px 18px;border-radius:999px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--nav-active-bg);color:var(--nav-active-ink)}
+.legend{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink-2)}
+.sw{display:inline-block;width:14px;height:14px;border-radius:4px}
+.sw.diff{background:var(--diff);border:1px solid var(--diff-edge)}
+
+/* Callout */
+.callout{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--fresh);border-radius:14px}
+.callout>summary{list-style:none;cursor:pointer;padding:16px 20px;font-weight:500;font-size:15px;display:flex;align-items:center;gap:12px}
+.callout>summary::-webkit-details-marker{display:none}
+.callout>summary .chev{width:18px;height:18px;flex:none;transition:transform .2s;stroke:var(--ink-3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.callout[open]>summary .chev{transform:rotate(90deg)}
+.callout-body{padding:0 22px 20px 50px}
+.bullets{display:flex;flex-direction:column;gap:10px;padding-left:18px}
+.bullets li{padding-left:2px}
+.bullets ul{margin-top:6px;display:flex;flex-direction:column;gap:4px;padding-left:18px;color:var(--ink-2)}
+.bullets b{font-weight:600}
+
+/* Matrix */
+.matrix-wrap{overflow:auto;max-height:calc(100vh - 150px);min-height:420px;background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.matrix{border-collapse:separate;border-spacing:0;font-size:12px;line-height:1.3;font-variant-numeric:tabular-nums}
+.matrix th,.matrix td{border-bottom:1px solid var(--line);padding:5px 8px;vertical-align:middle;text-align:left;background-clip:padding-box}
+.matrix thead th{position:sticky;background:var(--surface);z-index:2;font-weight:500}
+.matrix thead tr.r1 th{top:0;height:32px;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);border-bottom:0;padding-top:10px}
+.matrix thead tr.r2 th{top:32px;font-size:12px;color:var(--ink);font-weight:600;border-bottom:1px solid var(--line-2);vertical-align:top;text-align:center}
+.matrix thead tr.r2 th .role-h{text-align:center}
+.matrix thead tr.r2 th .spec-link{justify-content:center}
+.matrix .corner{z-index:5;vertical-align:bottom;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);font-weight:500;border-bottom:1px solid var(--line-2);text-align:left}
+.matrix .c-q{position:sticky;left:0;min-width:170px;max-width:170px;width:170px;background:var(--surface);z-index:3}
+.matrix .c-a{position:sticky;left:170px;min-width:210px;max-width:210px;width:210px;background:var(--surface);z-index:3;border-right:1px solid var(--line-2)}
+.matrix thead .c-q,.matrix thead .c-a{z-index:6}
+.matrix tbody th.c-q{vertical-align:top;font-weight:500;color:var(--ink);padding-top:8px}
+.matrix tbody th.c-q .qn{color:var(--ink-3);font-weight:400;margin-right:4px}
+.matrix tbody th.c-q .qsub{display:block;font-weight:400;color:var(--ink-3);margin-top:2px}
+.matrix td.c-a{color:var(--ink-2)}
+.matrix td.c-a.free{color:var(--ink-3);font-style:italic}
+.matrix td.cell{min-width:72px;max-width:80px;width:72px;padding-inline:4px;text-align:center}
+.matrix thead tr.r2 th{padding-inline:4px}
+.matrix .start{border-left:2px solid var(--line-2)}
+.matrix tbody.qg tr:first-child>*{border-top:2px solid var(--line-2)}
+.matrix tbody.qg:first-of-type tr:first-child>*{border-top:0}
+.matrix tbody tr:hover td{background-color:var(--surface-2)}
+.matrix tbody tr:hover td.c-a{color:var(--ink)}
+td.cell.diff,.matrix tbody tr:hover td.cell.diff{background-color:var(--diff)}
+.tick{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:6px;background:var(--sel);vertical-align:middle}
+.tick svg{width:13px;height:13px;stroke:var(--sel-ink);fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+td.cell.diff .tick{background:var(--diff-sel)}
+.titlecell{font-size:11px;line-height:1.25;color:var(--ink);display:block}
+.matrix.m-diff tbody.allsame{display:none}
+
+/* Spec links */
+.role-h{display:block}
+.matrix thead .spec-link{margin-top:3px;font-size:11.5px;font-weight:500}
+.spec-link{color:var(--link);text-decoration:none;display:inline-flex;align-items:center;gap:4px}
+.spec-link:hover{text-decoration:underline}
+.spec-link .ext{width:12px;height:12px;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.mgr-link{margin:0 0 12px;font-weight:500}
+.mgr-wrap{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow-x:auto}
+.matrix.mgr{width:100%}
+.matrix.mgr thead th,.matrix.mgr .c-q,.matrix.mgr .c-a{position:static}
+.matrix.mgr thead th.corner{text-align:left}
+.matrix.mgr .c-q{min-width:260px;max-width:none;width:40%}
+.matrix.mgr .c-a{min-width:220px;max-width:none;width:auto}
+.matrix.mgr td.cell{width:120px;max-width:120px}
+.stack-inner{display:flex;flex-direction:column;gap:20px}
+.mgr-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
+.mgr-head h2{font-size:18px;font-weight:600}
+
+/* Manager spec */
+.kv{display:flex;flex-direction:column}
+.kv-row{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:4px 20px;padding:9px 0;border-bottom:1px solid var(--line)}
+.kv-row:last-child{border-bottom:0}
+.kv-k{color:var(--ink-2)}
+.kv-v{font-weight:500}
+.sub-h{font-size:14px;font-weight:600;margin:22px 0 8px}
+.time{display:flex;flex-direction:column;gap:8px}
+.time-row{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:4px 12px;align-items:center}
+.time-lbl{font-size:13px;color:var(--ink-2)}
+.time-pct{text-align:right;font-weight:600;font-variant-numeric:tabular-nums}
+.time-bar{grid-column:1 / -1;height:6px;background:var(--surface-2);border-radius:999px;overflow:hidden}
+.time-bar i{display:block;height:100%;background:var(--fresh);border-radius:999px}
+
+/* Candidates */
+.filters{display:flex;flex-wrap:wrap;gap:8px}
+.filters a{display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:500;font-size:13.5px;color:var(--ink-2);background:var(--surface);border:1px solid var(--line);padding:9px 16px;border-radius:999px;transition:background .15s,color .15s}
+.filters a:hover{background:var(--surface-2);color:var(--ink)}
+.filters a b{font-weight:600;font-variant-numeric:tabular-nums;color:var(--ink-3)}
+.filters a[aria-current="true"]{background:var(--nav-active-bg);border-color:var(--nav-active-bg);color:var(--nav-active-ink)}
+.filters a[aria-current="true"] b{color:inherit;opacity:.8}
+.recfilter{display:flex;flex-wrap:wrap;gap:8px}
+.recfilter button{font:inherit;font-size:13px;font-weight:500;display:inline-flex;align-items:center;gap:8px;cursor:pointer;background:var(--surface);color:var(--ink-2);border:1px solid var(--line);padding:7px 14px;border-radius:999px;transition:background .15s,color .15s,border-color .15s}
+.recfilter button:hover{background:var(--surface-2);color:var(--ink)}
+.recfilter button b{font-weight:600;font-variant-numeric:tabular-nums}
+.recfilter .dot{width:9px;height:9px;border-radius:50%;flex:none}
+.recfilter .d-rec{background:var(--rec)} .recfilter .d-woc{background:var(--woc)} .recfilter .d-nr{background:var(--nr)}
+.recfilter button[aria-pressed="true"]{border-color:currentColor}
+.recfilter button.f-all[aria-pressed="true"]{background:var(--nav-active-bg);color:var(--nav-active-ink);border-color:var(--nav-active-bg)}
+.recfilter button.r-rec[aria-pressed="true"]{background:var(--rec-bg);color:var(--rec-ink)}
+.recfilter button.r-woc[aria-pressed="true"]{background:var(--woc-bg);color:var(--woc-ink)}
+.recfilter button.r-nr[aria-pressed="true"]{background:var(--nr-bg);color:var(--nr-ink)}
+.rec{display:inline-block;font-size:12.5px;font-weight:600;padding:4px 12px;border-radius:999px;white-space:nowrap}
+.rec.r-rec{background:var(--rec-bg);color:var(--rec-ink)}
+.rec.r-woc{background:var(--woc-bg);color:var(--woc-ink)}
+.rec.r-nr{background:var(--nr-bg);color:var(--nr-ink)}
+.rec b{font-variant-numeric:tabular-nums;margin-left:4px}
+.table-wrap{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow-x:auto}
+.ctable{width:100%;border-collapse:collapse;font-size:13.5px;font-variant-numeric:tabular-nums}
+.ctable th{text-align:left;font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:#fff;background:var(--stable);font-weight:500;padding:12px 14px;white-space:nowrap}
+.ctable td{padding:10px 14px;border-top:1px solid var(--line);vertical-align:middle}
+.ctable tbody tr:hover td{background:var(--surface-2)}
+.ctable tr.grp td{border-top:2px solid var(--line-2)}
+.ctable .muted{color:var(--ink-2)}
+.ctable .nowrap{white-space:nowrap}
+.ctable a{color:var(--link);font-weight:500;text-decoration:none;white-space:nowrap}
+.ctable a:hover{text-decoration:underline}
+.ctable .empty td{color:var(--ink-3);text-align:center;padding:28px 14px}
+.gaps{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink-3)}
+
+@media (max-width:640px){
+  .band-title{font-size:23px}
+  .matrix .c-q{position:static;min-width:150px;max-width:150px;width:150px}
+  .matrix .c-a{left:0;min-width:150px;max-width:150px;width:150px}
+  .matrix td.cell{min-width:64px}
+  .callout-body{padding:0 18px 18px 22px}
+  .kv-row{grid-template-columns:1fr}
+  .ctable td,.ctable th{padding-inline:10px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<nav class="nav" aria-label="Sections">
+  <div class="nav-in">
+    <img class="logo l" alt="Lushin" src="data:image/png;base64,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">
+    <img class="logo d" alt="Lushin" src="data:image/png;base64,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">
+    <div class="nav-toggle" role="group" aria-label="View">
+      <a href="#specs" data-nav="specs">Role Specs</a>
+      <a href="#candidates" data-nav="candidates">Candidates</a>
+    </div>
+    <button type="button" class="theme-btn" id="theme-btn" aria-label="Switch to dark mode" title="Switch to dark mode">
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M4.6 4.6l1.4 1.4M18 18l1.4 1.4M2.5 12h2M19.5 12h2M4.6 19.4L6 18M18 6l1.4-1.4"/></svg>
+    </button>
+  </div>
+</nav>
+
+<main>
+  <section class="view" id="view-specs">
+    <header class="band band-a"><div class="wrap wide"><span class="band-ctx">Hubexo</span><h1 class="band-title">Role Spec Answers</h1></div></header>
+    <div class="wrap wide stack">
+      <nav class="filters" aria-label="Questionnaire" id="spec-sub">
+        <a href="#specs" data-sub="roles">Sales roles</a>
+        <a href="#specs-manager" data-sub="manager">UK Sales Manager</a>
+      </nav>
+
+      <div class="stack-inner" id="pane-roles">
+      <details class="callout" id="standout">
+        <summary><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>What stands out across the specs</summary>
+        <div class="callout-body">
+          <ul class="bullets">
+            <li>Difficulty (Q3) sets how high the OMG bar is:
+              <ul>
+                <li>Moderate: all of Aus/NZ, all of Continental Europe, Nordics BDR</li>
+                <li>Considerable: Nordics BDM, UK BDM, UK SDR</li>
+                <li>Some: US BDR, US Inside Sales</li>
+                <li>Significant: US Strategic Sales</li>
+              </ul>
+            </li>
+            <li>Sell cycle (Q12):
+              <ul>
+                <li>3–6 months: Aus/NZ BDM 1 and 2, Nordics BDM and BDR, UK BDM</li>
+                <li>2–3 calls: Continental Europe, UK SDR, US BDR, US Inside Sales</li>
+                <li>Two picks: Aus/NZ KAM/CSM (2–3 calls and 3–6 months), US Strategic Sales (3–6 months and 6+ months)</li>
+              </ul>
+            </li>
+            <li>Pricing (Q9): every region says usually higher except the US</li>
+            <li>Company size (Q20): Continental Europe says small to medium; everyone else says large business</li>
+            <li>Double picks worth tightening (the fewer answers per question, the closer the match):
+              <ul>
+                <li>US Inside Sales: pricing (higher and competitive) and compensation (mostly salary and mostly commission)</li>
+                <li>Aus/NZ KAM/CSM: sell cycle, and three picks on customer development</li>
+                <li>US Strategic Sales: sell cycle and order size</li>
+              </ul>
+            </li>
+            <li>Report titles to confirm (Q1):
+              <ul>
+                <li>UK SDR shows "Business Development Manager"</li>
+                <li>US Inside Sales shows "Mid Market Sales"</li>
+              </ul>
+            </li>
+            <li>Continental Europe's three BDM specs are identical, and so are Aus/NZ BDM 1 and BDM 2</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="toolbar">
+        <div class="seg" role="group" aria-label="Show">
+          <button type="button" id="mode-all" data-mode="all" aria-pressed="true">All answers</button>
+          <button type="button" id="mode-diff" data-mode="diff" aria-pressed="false">Differences only</button>
+        </div>
+        <span class="legend"><span class="tick" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>Selected</span>
+        <span class="legend"><span class="sw diff"></span>Answered differently from most roles</span>
+      </div>
+
+      <div class="matrix-wrap"><table class="matrix" id="matrix"></table></div>
+      </div>
+
+      <div class="stack-inner" id="pane-manager" hidden>
+        <div id="mgr-body"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="view-candidates" hidden>
+    <header class="band band-b"><div class="wrap mid"><span class="band-ctx">Hubexo</span><h1 class="band-title">Candidates by Region</h1></div></header>
+    <div class="wrap mid stack" id="cand-body"></div>
+  </section>
+</main>
+
+<script>
+const DATA = {"questions":[{"n":1,"short":"Report title","full":"Title to show on report","opts":[],"short_opts":[],"heavy":false},{"n":2,"short":"Position","full":"Position","opts":["Outside Sales","Inside Sales","Major Accounts","National Accounts","Account Manager","Telesales","OEM Sales","Channel Manager"],"short_opts":["Outside Sales","Inside Sales","Major Accounts","National Accounts","Account Manager","Telesales","OEM Sales","Channel Manager"],"heavy":false},{"n":3,"short":"Difficulty","full":"Anticipated difficulty for the position","opts":["None to Little","Some Difficulty","Moderate Difficulty","Considerable Difficulty","Significant Difficulty"],"short_opts":["None to little","Some","Moderate","Considerable","Significant"],"heavy":true},{"n":4,"short":"Job description","full":"Job Description / Requirements","opts":["Traditional Sales Role - Salesperson is responsible for the entire sales cycle, could be deployed as an outside or inside salesperson, and may have a quota."],"short_opts":["Traditional sales role"],"heavy":false},{"n":5,"short":"Markets","full":"Markets on which your salespeople should call","opts":["Corporate / industrial","Residential","Small business / professional","Institutional"],"short_opts":["Corporate","Residential","Small business","Institutional"],"heavy":false},{"n":6,"short":"Talking to","full":"Ideal person/people with whom your salesperson should be talking (other than procurement people)","opts":["Ownership or C level","Management level","Business users","Consumers"],"short_opts":["Owner / C-level","Management","Business users","Consumers"],"heavy":false},{"n":7,"short":"Early resistance","full":"The resistance your salespeople will encounter early in the sales process","opts":["No resistance","Very little resistance","Moderate resistance","Lots of resistance"],"short_opts":["None","Very little","Moderate","Lots"],"heavy":true},{"n":8,"short":"Competition","full":"How much competition will they face?","opts":["Tremendous competition","Regular competition","Occasional competition","We are the only game in town"],"short_opts":["Tremendous","Regular","Occasional","Only game in town"],"heavy":true},{"n":9,"short":"Pricing","full":"Pricing","opts":["We are usually higher","We are usually competitive","We are usually lower"],"short_opts":["Higher","Competitive","Lower"],"heavy":true},{"n":10,"short":"Avg order (USD)","full":"Average size of an account / order ($USD)","opts":["Under $US1,000","$US1,000 - $US25,000","$US25,000 - $US250,000","Over $US250,000"],"short_opts":["Under $1K","$1K–25K","$25K–250K","Over $250K"],"heavy":false},{"n":11,"short":"We sell","full":"We sell","opts":["Custom engineered solutions","Conceptual services","Products we can demonstrate","Commodities"],"short_opts":["Custom engineered","Conceptual services","Demo-able products","Commodities"],"heavy":false},{"n":12,"short":"Sell cycle","full":"Your sell cycle is","opts":["A one call close","Two to three calls","3-6 months","More than 6 months"],"short_opts":["One call","2–3 calls","3–6 months","6+ months"],"heavy":false},{"n":13,"short":"Customer development","full":"Customer development - Salespeople should","opts":["Sell them and move on","Sell them on a regular basis","Sell them and renew yearly","Sell them and service them"],"short_opts":["Sell & move on","Sell regularly","Sell & renew yearly","Sell & service"],"heavy":false},{"n":14,"short":"Hunting","full":"How much of a hunting / prospecting requirement will there be for your new salespeople?","opts":["They must hunt","Mostly hunting","Some hunting required","No hunting"],"short_opts":["Must hunt","Mostly hunting","Some hunting","No hunting"],"heavy":false},{"n":15,"short":"Closing","full":"Closing","opts":["Salesperson will do the closing","Salesperson will plant seeds","Inside people do the closing","Someone else does the closing"],"short_opts":["Salesperson closes","Plants seeds","Inside closes","Someone else closes"],"heavy":false},{"n":16,"short":"Presentations","full":"Salesperson will make presentations","opts":["Once to a single decision maker","Once to a group","Multiple times to individuals","Multiple times to a group"],"short_opts":["Once, one DM","Once, group","Multiple, individuals","Multiple, group"],"heavy":false},{"n":17,"short":"Products are","full":"Our products and services are","opts":["Top of the line","Middle of the pack","A little behind","Different"],"short_opts":["Top of the line","Middle of the pack","A little behind","Different"],"heavy":false},{"n":18,"short":"Pressure","full":"Pressure you will place on the salesperson","opts":["High","Medium","Low","None"],"short_opts":["High","Medium","Low","None"],"heavy":false},{"n":19,"short":"Supervision","full":"Our supervision and management is","opts":["Micro managed","Closely managed","Seldom managed","Not managed"],"short_opts":["Micro managed","Closely managed","Seldom managed","Not managed"],"heavy":false},{"n":20,"short":"Company size","full":"You run a","opts":["Small professional firm","Small to medium sized business","Large business","Major corporation"],"short_opts":["Small firm","Small to medium","Large business","Major corporation"],"heavy":false},{"n":21,"short":"Compensation","full":"Method of compensation","opts":["All salary","Straight commission","Mostly salary with some commission","Mostly commission with some salary"],"short_opts":["All salary","Straight commission","Mostly salary","Mostly commission"],"heavy":false},{"n":22,"short":"Environment","full":"Your selling environment is","opts":["Turbulent and ever changing","Downsizing and turnover","Rapid growth and expansion","Very calm and stable"],"short_opts":["Turbulent","Downsizing","Rapid growth","Calm & stable"],"heavy":false},{"n":23,"short":"Works from","full":"The salesperson for this position will work","opts":["Out of my office or one staffed by a sales manager","Out of a branch office without a sales manager","Out of a remote or home office without staff"],"short_opts":["Manager's office","Branch, no manager","Remote / home"],"heavy":false},{"n":24,"short":"Entrepreneurial","full":"Our salespeople","opts":["Must have an entrepreneurial mindset","Should not have an entrepreneurial mindset","It does not matter"],"short_opts":["Must be","Should not be","Doesn't matter"],"heavy":false},{"n":25,"short":"Selling via","full":"The salesperson will be selling primarily","opts":["On the phone","Face to Face","At trade shows"],"short_opts":["Phone","Face to face","Trade shows"],"heavy":false},{"n":26,"short":"Sells to","full":"Our salespeople sell","opts":["Directly to the customer / client","Through someone who sells to our Customer / Client"],"short_opts":["Direct","Through a reseller"],"heavy":false},{"n":27,"short":"Customers","full":"Our customers / clients","opts":["Are buying what we sell but must choose from whom to buy (Why me?)","Haven't planned to buy what we sell (Why?)"],"short_opts":["Buying: why us?","Not planning: why buy?"],"heavy":false},{"n":28,"short":"Opportunity finding","full":"Additional opportunity finding skill sets required","opts":["Social selling","Traditional networking","Either of the above","Both social selling AND traditional networking","These skill sets are not required"],"short_opts":["Social selling","Networking","Either","Both","Not required"],"heavy":false},{"n":29,"short":"Leads","full":"With regard to leads","opts":["We provide all they need","We provide some - they need to supplement","We don't provide any - they need to prospect","This is an account management position"],"short_opts":["We provide all","Some, they supplement","None, they prospect","Account management"],"heavy":false}],"roles":[{"region":"Aus/NZ","role":"BDM 1","code":"X29VLRL","title":"Business Development Manager","ans":{"2":[0],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[0],"9":[0],"10":[1],"11":[2],"12":[2],"13":[0],"14":[0],"15":[0],"16":[0,2],"17":[0],"18":[0],"19":[1],"20":[2],"21":[3],"22":[0],"23":[0],"24":[2],"25":[0],"26":[0],"27":[0],"28":[3],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2058245&MI=2"},{"region":"Aus/NZ","role":"BDM 2","code":"X4TX284","title":"Business Development Manager","ans":{"2":[0],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[0],"9":[0],"10":[1],"11":[2],"12":[2],"13":[0],"14":[0],"15":[0],"16":[0,2],"17":[0],"18":[0],"19":[1],"20":[2],"21":[3],"22":[0],"23":[0],"24":[2],"25":[0],"26":[0],"27":[0],"28":[3],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2058259&MI=2"},{"region":"Aus/NZ","role":"KAM/CSM","code":"XH8T6C3","title":"KAM/CSM","ans":{"2":[4],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[1],"8":[1],"9":[0],"10":[1],"11":[2],"12":[1,2],"13":[1,2,3],"14":[2],"15":[0],"16":[0,1],"17":[0],"18":[0],"19":[1],"20":[2],"21":[2],"22":[0],"23":[0],"24":[2],"25":[0],"26":[0],"27":[1],"28":[3],"29":[3]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2058250&MI=2"},{"region":"Continental Europe","role":"BDM English","code":"XRGHSKV","title":"Business Development Manager","ans":{"2":[0],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[1],"9":[0],"10":[1],"11":[2],"12":[1],"13":[0],"14":[0],"15":[0],"16":[0,1,2,3],"17":[0,1],"18":[1],"19":[1],"20":[1],"21":[3],"22":[0],"23":[0,2],"24":[2],"25":[0,2],"26":[0],"27":[0],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2056539&MI=2"},{"region":"Continental Europe","role":"BDM German","code":"XRLC4MX","title":"Business Development Manager","ans":{"2":[0],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[1],"9":[0],"10":[1],"11":[2],"12":[1],"13":[0],"14":[0],"15":[0],"16":[0,1,2,3],"17":[0,1],"18":[1],"19":[1],"20":[1],"21":[3],"22":[0],"23":[0,2],"24":[2],"25":[0,2],"26":[0],"27":[0],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2056536&MI=2"},{"region":"Continental Europe","role":"BDM Spanish","code":"XMKVGGN","title":"Business Development Manager","ans":{"2":[0],"3":[2],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[1],"9":[0],"10":[1],"11":[2],"12":[1],"13":[0],"14":[0],"15":[0],"16":[0,1,2,3],"17":[0,1],"18":[1],"19":[1],"20":[1],"21":[3],"22":[0],"23":[0,2],"24":[2],"25":[0,2],"26":[0],"27":[0],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2055688&MI=2"},{"region":"Nordics","role":"BDM","code":"XZHLLDX","title":"Business Development Manager","ans":{"2":[0],"3":[3],"4":[0],"5":[0],"6":[0,1],"7":[2],"8":[2],"9":[0],"10":[1],"11":[2],"12":[2],"13":[0],"14":[1],"15":[0],"16":[0,1,2,3],"17":[0],"18":[1],"19":[1],"20":[2],"21":[3],"22":[0,2],"23":[0],"24":[2],"25":[0,2],"26":[0],"27":[1],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2057522&MI=2"},{"region":"Nordics","role":"BDR","code":"XYBYNPN","title":"BDR","ans":{"2":[5],"3":[2],"4":[0],"5":[0],"6":[0,1],"7":[2],"8":[2],"9":[0],"10":[1],"11":[2],"12":[2],"13":[0],"14":[0],"15":[0],"16":[0,1],"17":[0],"18":[1],"19":[1],"20":[2],"21":[3],"22":[0,2],"23":[0],"24":[2],"25":[0],"26":[0],"27":[1],"28":[4],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2055198&MI=2"},{"region":"UK","role":"BDM","code":"X6JNYVH","title":"Business Development Manager","ans":{"2":[1],"3":[3],"4":[0],"5":[0,2],"6":[0,1],"7":[2],"8":[0],"9":[0],"10":[1],"11":[2],"12":[2],"13":[0],"14":[1],"15":[0],"16":[0,1,2,3],"17":[1],"18":[1],"19":[1],"20":[2],"21":[3],"22":[0,2],"23":[0],"24":[2],"25":[0,2],"26":[0],"27":[0,1],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2053976&MI=2"},{"region":"UK","role":"SDR","code":"XQ5DZ86","title":"Business Development Manager","ans":{"2":[5],"3":[3],"4":[0],"5":[0,2],"6":[0,1],"7":[3],"8":[0],"9":[0],"10":[1],"11":[2],"12":[1],"13":[0],"14":[0],"15":[3],"16":[0],"17":[1],"18":[1],"19":[1],"20":[2],"21":[2],"22":[0,2],"23":[0],"24":[2],"25":[0,2],"26":[0],"27":[0,1],"28":[0],"29":[2]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2055280&MI=2"},{"region":"US","role":"BDR","code":"X5944P3","title":"BDR","ans":{"2":[5],"3":[1],"4":[0],"5":[0],"6":[0,1,2],"7":[2],"8":[1],"9":[1],"10":[1],"11":[2],"12":[1],"13":[0],"14":[0],"15":[3],"16":[0,1],"17":[0],"18":[1],"19":[1],"20":[2],"21":[2],"22":[2],"23":[2],"24":[2],"25":[0],"26":[0],"27":[0,1],"28":[4],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2057531&MI=2"},{"region":"US","role":"Inside Sales","code":"XHS8DT9","title":"Mid Market Sales","ans":{"2":[1],"3":[1],"4":[0],"5":[2],"6":[0,1],"7":[2],"8":[1],"9":[0,1],"10":[1],"11":[2],"12":[1],"13":[0],"14":[1],"15":[0],"16":[0,1],"17":[0],"18":[1],"19":[1],"20":[2],"21":[2,3],"22":[2],"23":[2],"24":[2],"25":[0],"26":[0],"27":[0,1],"28":[4],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2057527&MI=2"},{"region":"US","role":"Strategic Sales","code":"XVST6BF","title":"Strategic Sales","ans":{"2":[2],"3":[4],"4":[0],"5":[0],"6":[0],"7":[3],"8":[0],"9":[1],"10":[1,2],"11":[2],"12":[2,3],"13":[0],"14":[1],"15":[0],"16":[2,3],"17":[0],"18":[1],"19":[1],"20":[2],"21":[3],"22":[2],"23":[2],"24":[2],"25":[0,2],"26":[0],"27":[0],"28":[0],"29":[1]},"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2057526&MI=2"}],"mgr":{"title":"Sales Manager","answers":[{"n":2,"q":"Position","full":"Position","raw":"Position","a":["Sales Manager"],"opts":["Sales Manager","Regional Manager","District Manager","Director of Sales","VP of Sales","National Sales Manager","Division Sales Manager","International Sales Manager","North American Sales Manager"],"sel":[0]},{"n":3,"q":"Difficulty","full":"Anticipated difficulty for the position","raw":"Anticipated difficulty for the position","a":["Considerable Difficulty"],"opts":["Moderate Difficulty","Considerable Difficulty","Significant Difficulty"],"sel":[1]},{"n":4,"q":"Accounts and customers","full":"With regard to accounts and customers","raw":"With regard to accounts and customers My number one strategy is","a":["Volume"],"opts":["Volume","Profit"],"sel":[0]},{"n":5,"q":"Customer financial profile","full":"With regard to the financial profile of a potential customer","raw":"With regard to the financial profile of a potential customer My number one strategy is","a":["Potential volume"],"opts":["Potential volume","Credit worthiness"],"sel":[0]},{"n":6,"q":"Details of the business","full":"With regard to the details of the business","raw":"With regard to the details of the business My number one strategy is","a":["Follow the plan without deviation"],"opts":["Follow the plan without deviation","Pursue unplanned opportunities whenever they appear"],"sel":[0]},{"n":7,"q":"Sales manager's role","full":"With regard to the sales manager's role I see","raw":"With regard to the sales manager's role I see The number one strategy as","a":["Someone who manages and develops salespeople"],"opts":["The manager maintains personal sales","A salesperson with supervisory responsibility","Someone who manages and develops salespeople","A supervisory position"],"sel":[2]},{"n":8,"q":"Recruiting","full":"With regard to recruiting","raw":"With regard to recruiting My number one strategy is","a":["Only A players"],"opts":["Only A players","The first available candidate","The best available candidate"],"sel":[0]},{"n":9,"q":"Sales training","full":"With regard to providing sales training","raw":"With regard to providing sales training My number one strategy is","a":["Have our people provide the training"],"opts":["Bring in outside training professionals","Have our people provide the training","Realize that training doesn't work","Hire salespeople that don't require any training"],"sel":[1]},{"n":10,"q":"Compensation plan","full":"With regard to compensation, I believe that we ultimately must have a plan where","raw":"With regard to compensation, I believe that we ultimately must have a plan where My Number One Strategy is:","a":["Salary plus commission"],"opts":["All salary","Salary plus bonus","Salary plus commission","All commission"],"sel":[2]},{"n":11,"q":"Developing people","full":"With regard to developing people","raw":"With regard to developing people My number one strategy is","a":["Develop the existing people"],"opts":["Develop the existing people","Replace all of our non performers"],"sel":[0]},{"n":12,"q":"Sales tools (CRM, pipeline, automation)","full":"With regard to sales tools (e.g. CRM, pipeline management, marketing automation)","raw":"With regard to sales tools (e.g. CRM, pipeline management, marketing automation) My number one strategy is to","a":["Get everyone using it"],"opts":["Get everyone using it","Plan future installation","Continue without these tools","Expand our use of tools"],"sel":[0]},{"n":13,"q":"Market strategy","full":"With regard to our market strategy","raw":"With regard to our market strategy My number one strategy is","a":["Expand it"],"opts":["Expand it","Defend it","Maintain it"],"sel":[0]},{"n":14,"q":"Trade shows","full":"With regard to trade shows","raw":"With regard to trade shows My number one strategy is to participate","a":["In targeted shows"],"opts":["In every appropriate show","In targeted shows","As little as possible"],"sel":[1]},{"n":15,"q":"Role of marketing","full":"With regard to the role of marketing","raw":"With regard to the role of marketing My number one strategy is for it to","a":["Generate sales"],"opts":["Create leads","Create visibility","Generate sales","Enhance company image"],"sel":[2]},{"n":16,"q":"Reaching customers","full":"With regard to reaching customers/clients","raw":"With regard to reaching customers/clients My number one strategy is to","a":["Create new channels"],"opts":["Create new channels","Develop existing channels"],"sel":[0]},{"n":17,"q":"Known as the leader in","full":"With regard to company identity","raw":"With regard to company identity My number one strategy is to be known as the leader in","a":["Quality"],"opts":["Price","Quality","Service","Expertise"],"sel":[1]},{"n":18,"q":"Growth","full":"With regard to growth","raw":"With regard to growth My number one strategy is","a":["Finding new business"],"opts":["Finding new business","Growing existing accounts"],"sel":[0]},{"n":19,"q":"Competition","full":"With regard to competition","raw":"With regard to competition My number one strategy is to","a":["Hold firm on prices"],"opts":["Beat their price","Match their price","Hold firm on prices"],"sel":[2]},{"n":20,"q":"Inbound strategy","full":"With regard to an inbound strategy","raw":"With regard to an inbound strategy My number one strategy is to","a":["Not change our current strategy"],"opts":["Not change our current strategy","Generate interest/leads for our salespeople","Take all of the easy online leads and orders we can get","Simply have a social media presence","Ignore it for now"],"sel":[0]}],"time":[{"label":"Coaching and developing salespeople","pct":45},{"label":"Motivating and directing salespeople","pct":15},{"label":"Recruiting and interviewing sales candidates","pct":5},{"label":"Measuring performance and holding salespeople accountable","pct":15},{"label":"Managing crisis","pct":0},{"label":"Internal company issues","pct":5},{"label":"Planning or managing compensation","pct":0},{"label":"Organization or reorganization planning","pct":10},{"label":"Company and/or product strategy","pct":5},{"label":"Selling personal accounts","pct":0}],"url":"https://info.objectivemanagement.com/Registration.aspx?ID=2055276&MI=2"},"cands":[{"region":"Continental Europe","role":"BDM English","date":"2026-09-14","rec":"Worthy of Consideration","name":"Michael Godden","url":"https://objectivemanagement.blob.core.windows.net/candidate/cbea29ac5de84f6aa4566d257297d4a5/2064044/Michael-Godden.pdf"},{"region":"Continental Europe","role":"BDM English","date":"2026-09-16","rec":"Recommended","name":"Thomas Speirs","url":"https://objectivemanagement.blob.core.windows.net/candidate/91b8a18c14e4404681863e57bf8d0515/2064738/Thomas-Speirs.pdf"},{"region":"Continental Europe","role":"BDM English","date":"2026-09-16","rec":"Recommended","name":"Jannath Mostafa","url":"https://objectivemanagement.blob.core.windows.net/candidate/c4e9a070972f40d39702d5414092c74d/2064876/Jannath-Mostafa.pdf"},{"region":"Continental Europe","role":"BDM English","date":"2026-09-17","rec":"Worthy of Consideration","name":"Hebe Lanyon","url":"https://objectivemanagement.blob.core.windows.net/candidate/27ed6e844ab944e486aa198aadf91e52/2065106/Hebe-Lanyon.pdf"},{"region":"Continental Europe","role":"BDM English","date":"2026-09-17","rec":"Worthy of Consideration","name":"Henry Giles","url":"https://objectivemanagement.blob.core.windows.net/candidate/34fdb3cec3fb44129d2cd423cd968909/2065110/Henry-Giles.pdf"},{"region":"Continental Europe","role":"BDM English","date":"2026-09-17","rec":"Recommended","name":"Joe Scrivens","url":"https://objectivemanagement.blob.core.windows.net/candidate/979f1c4ce1b44b79a28e183b284c86d9/2065155/Joe-Scrivens.pdf"},{"region":"Continental Europe","role":"BDM Spanish","date":"2026-08-21","rec":"Not Recommended","name":"Duarte Sánchez Vázquez","url":"https://objectivemanagement.blob.core.windows.net/candidate/ce9ddde203cb4636b7993e0f76be9de6/2056012/Duarte-Sánchez-Vázquez.pdf"},{"region":"Continental Europe","role":"BDM Spanish","date":"2026-09-11","rec":"Not Recommended","name":"Sonia Herrero Martín","url":"https://objectivemanagement.blob.core.windows.net/candidate/9a63d935dffe41e8897a96204f2f5076/2062951/Sonia-Herrero-Martín.pdf"},{"region":"Continental Europe","role":"BDM Spanish","date":"2026-09-15","rec":"Not Recommended","name":"Carla Rodríguez Martínez","url":"https://objectivemanagement.blob.core.windows.net/candidate/6688db5fed7d451c9f39e8002f47375b/2064453/Carla-Rodríguez-Martínez.pdf"},{"region":"Continental Europe","role":"BDM Spanish","date":"2026-09-18","rec":"Recommended","name":"Manuel Escribano Torres","url":"https://objectivemanagement.blob.core.windows.net/candidate/7075652c55154361b6cde45c10a33e0f/2065486/Manuel-Escribano-Torres.pdf"},{"region":"Continental Europe","role":"BDM Spanish","date":"2026-09-24","rec":"Not Recommended","name":"Alonso Valdés Sarmiento","url":"https://objectivemanagement.blob.core.windows.net/candidate/63c3cdddef994e8e89195c06f58a6329/2066291/Alonso-Valdés-Sarmiento.pdf"},{"region":"Nordics","role":"BDM","date":"2026-09-24","rec":"Not Recommended","name":"Olga Smrčková","url":"https://objectivemanagement.blob.core.windows.net/candidate/0881ba4f070a45faaf59f236e0d6ea0b/2067583/Olga-Smrčková.pdf"},{"region":"Nordics","role":"BDM","date":"2026-09-28","rec":"Not Recommended","name":"Christian Candinas","url":"https://objectivemanagement.blob.core.windows.net/candidate/249c554563844accbba8e914b957f5eb/2068773/Christian-Candinas.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-09","rec":"Not Recommended","name":"Hassan Ali Hawas","url":"https://objectivemanagement.blob.core.windows.net/candidate/d30550885452482c8db7df06ac77e056/2062125/Hassan-Ali-Hawas.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-10","rec":"Worthy of Consideration","name":"Matilde Stryger","url":"https://objectivemanagement.blob.core.windows.net/candidate/fcdff3428b9746cf97b1308d8effca83/2062556/Matilde-Stryger.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-16","rec":"Not Recommended","name":"Melanie Holst","url":"https://objectivemanagement.blob.core.windows.net/candidate/a242bd1983334b9c8a66e7b05c5eb49e/2064737/Melanie-Holst.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-19","rec":"Not Recommended","name":"Nicole Umerkajeff","url":"https://objectivemanagement.blob.core.windows.net/candidate/5b7a949867e64bfba406fadb6bc026e3/2065874/Nicole-Umerkajeff.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-23","rec":"Not Recommended","name":"Nichlas Findinge","url":"https://objectivemanagement.blob.core.windows.net/candidate/c56540a7c74349ba9eb4b2359570937f/2066871/Nichlas-Findinge.pdf"},{"region":"Nordics","role":"BDR","date":"2026-09-24","rec":"Not Recommended","name":"John Philip Skramstad Nilsen","url":"https://objectivemanagement.blob.core.windows.net/candidate/ad9a388e5bca4a688e8504e4db9fe9ac/2067627/John-Philip-Skramstad-Nilsen.pdf"},{"region":"UK","role":"BDM","date":"2026-09-24","rec":"Not Recommended","name":"Joshua Williamson","url":"https://objectivemanagement.blob.core.windows.net/candidate/4f23296b63fd4acaaab37ed2aa3ce2ee/2067628/Joshua-Williamson.pdf"},{"region":"UK","role":"Manager","date":"2026-09-09","rec":"Not Recommended","name":"Rachel Charlton","url":"https://objectivemanagement.blob.core.windows.net/candidate/b5a97c05e38a44968c3c9a706cffc449/2062090/Rachel-Charlton.pdf"},{"region":"UK","role":"Manager","date":"2026-09-17","rec":"Not Recommended","name":"Sean O'Connor","url":"https://objectivemanagement.blob.core.windows.net/candidate/64e0dd85dd594671b7834fb39da0adc9/2065122/Sean-O'Connor.pdf"},{"region":"UK","role":"SDR","date":"2026-09-16","rec":"Not Recommended","name":"Aaron Chatterjee","url":"https://objectivemanagement.blob.core.windows.net/candidate/f32e8f401206497f966b1db6858613a6/2064722/Aaron-Chatterjee.pdf"},{"region":"UK","role":"SDR","date":"2026-09-18","rec":"Not Recommended","name":"Libby Bowden","url":"https://objectivemanagement.blob.core.windows.net/candidate/5f0cf879e24944d3b1b5d8331b0770de/2065502/Libby-Bowden.pdf"},{"region":"US","role":"Strategic Sales","date":"2026-08-31","rec":"Not Recommended","name":"Derek Seiling","url":"https://objectivemanagement.blob.core.windows.net/candidate/44a38e59b0b34ed5adf59bbf333c7367/2059114/Derek-Seiling.pdf"},{"region":"US","role":"BDR","date":"2026-09-10","rec":"Not Recommended","name":"Carson Blair","url":"https://objectivemanagement.blob.core.windows.net/candidate/4fde1d9a70f44548848ccb0428c3d278/2062883/Carson-Blair.pdf"},{"region":"US","role":"Inside Sales","date":"2026-09-22","rec":"Recommended","name":"Dallas Stobb","url":"https://objectivemanagement.blob.core.windows.net/candidate/bf170a7db6054cd1ae1607b79ce0d491/2066018/Dallas-Stobb.pdf"}]};
+const REC = [
+  {key:'Recommended', cls:'r-rec'},
+  {key:'Worthy of Consideration', cls:'r-woc'},
+  {key:'Not Recommended', cls:'r-nr'}
+];
+const REGIONS = [
+  {id:'aus', name:'Aus/NZ', roles:['BDM 1','BDM 2','KAM/CSM']},
+  {id:'ce', name:'Continental Europe', roles:['BDM English','BDM German','BDM Spanish']},
+  {id:'nordics', name:'Nordics', roles:['BDM','BDR','Role #3']},
+  {id:'uk', name:'UK', roles:['BDM','Manager','SDR']},
+  {id:'us', name:'US', roles:['BDR','Inside Sales','Strategic Sales']}
+];
+
+const EXT = '<svg class="ext" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 5h5v5M19 5l-8 8M18 14v4a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4"/></svg>';
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtDate = iso => { const d = new Date(iso + 'T12:00:00'); return d.toLocaleDateString('en-US',{month:'short',day:'numeric'}); };
+const recOf = k => REC.find(r => r.key === k);
+
+/* ---------- Role spec matrix ---------- */
+const TICK = '<span class="tick" role="img" aria-label="Selected"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span>';
+function buildMatrix(){
+  const {questions, roles} = DATA;
+  const regions = [];
+  roles.forEach(r => { const last = regions[regions.length-1]; if (last && last.name === r.region) last.n++; else regions.push({name:r.region, n:1}); });
+  const starts = new Set(); let i = 0; regions.forEach(g => { starts.add(i); i += g.n; });
+
+  let h = '<thead><tr class="r1"><th class="corner c-q" rowspan="2" scope="col">Question</th><th class="corner c-a" rowspan="2" scope="col">Answer</th>';
+  regions.forEach(g => { h += `<th colspan="${g.n}" class="start" scope="colgroup">${esc(g.name)}</th>`; });
+  h += '</tr><tr class="r2">';
+  roles.forEach((r, j) => { h += `<th scope="col" class="${starts.has(j) ? 'start' : ''}"><span class="role-h">${esc(r.role)}</span>${r.url ? `<a class="spec-link" href="${esc(r.url)}" target="_blank" rel="noopener" title="Open the ${esc(r.region + ' ' + r.role)} role spec in OMG">Open${EXT}</a>` : ''}</th>`; });
+  h += '</tr></thead>';
+
+  questions.forEach(q => {
+    const qlabel = `<span class="qn">${q.n}.</span>${esc(q.full)}`;
+    if (q.n === 1) {
+      h += `<tbody class="qg"><tr><th scope="row" class="c-q">${qlabel}</th><td class="c-a free">Free-text response</td>`;
+      roles.forEach((r, j) => { h += `<td class="cell${starts.has(j) ? ' start' : ''}"><span class="titlecell">${esc(r.title)}</span></td>`; });
+      h += '</tr></tbody>';
+      return;
+    }
+    const sigs = roles.map(r => (r.ans[q.n] || []).join(','));
+    const counts = {}; sigs.forEach(x => counts[x] = (counts[x] || 0) + 1);
+    const mode = Object.keys(counts).sort((a, b) => counts[b] - counts[a])[0];
+    const allSame = Object.keys(counts).length === 1;
+    h += `<tbody class="qg${allSame ? ' allsame' : ''}">`;
+    q.opts.forEach((opt, k) => {
+      h += '<tr>';
+      if (k === 0) h += `<th scope="rowgroup" class="c-q" rowspan="${q.opts.length}">${qlabel}</th>`;
+      h += `<td class="c-a">${esc(opt)}</td>`;
+      roles.forEach((r, j) => {
+        const sel = (r.ans[q.n] || []).includes(k);
+        const diff = !allSame && sigs[j] !== mode;
+        h += `<td class="cell${diff ? ' diff' : ''}${starts.has(j) ? ' start' : ''}" title="${esc(r.region + ' ' + r.role + ': ' + (sel ? 'selected' : 'not selected'))}">${sel ? TICK : ''}</td>`;
+      });
+      h += '</tr>';
+    });
+    h += '</tbody>';
+  });
+  document.getElementById('matrix').innerHTML = h;
+}
+
+function setMode(mode){
+  const diff = mode === 'diff';
+  document.getElementById('matrix').classList.toggle('m-diff', diff);
+  document.getElementById('mode-all').setAttribute('aria-pressed', String(!diff));
+  document.getElementById('mode-diff').setAttribute('aria-pressed', String(diff));
+}
+
+function buildManager(){
+  const m = DATA.mgr;
+  let h = `<div class="mgr-head"><h2>UK Sales Manager</h2>${m.url ? `<a class="spec-link" href="${esc(m.url)}" target="_blank" rel="noopener">Open${EXT}</a>` : ''}</div>`;
+  h += '<div class="mgr-wrap"><table class="matrix mgr"><thead><tr class="r2"><th class="corner c-q" scope="col" style="top:0">Question</th><th class="corner c-a" scope="col" style="top:0">Answer</th><th scope="col" class="start" style="top:0">UK Manager</th></tr></thead>';
+  h += `<tbody class="qg"><tr><th scope="row" class="c-q"><span class="qn">1.</span>Title to show on report</th><td class="c-a free">Free-text response</td><td class="cell start"><span class="titlecell">${esc(m.title)}</span></td></tr></tbody>`;
+  m.answers.forEach(a => {
+    const parts = a.raw.split(/\s(?=(?:My number one strategy|My Number One Strategy|The number one strategy))/);
+    const label = `<span class="qn">${a.n}.</span>${esc(parts[0])}${parts[1] ? `<span class="qsub">${esc(parts[1])}</span>` : ''}`;
+    h += '<tbody class="qg">';
+    a.opts.forEach((opt, k) => {
+      h += '<tr>';
+      if (k === 0) h += `<th scope="rowgroup" class="c-q" rowspan="${a.opts.length}">${label}</th>`;
+      h += `<td class="c-a">${esc(opt)}</td><td class="cell start">${a.sel.includes(k) ? TICK : ''}</td></tr>`;
+    });
+    h += '</tbody>';
+  });
+  h += '</table></div>';
+  h += '<h3 class="sub-h">Sales manager time split (%)</h3><div class="time">';
+  m.time.forEach(t => { h += `<div class="time-row"><span class="time-lbl">${esc(t.label)}</span><span class="time-pct">${t.pct}</span><span class="time-bar"><i style="width:${t.pct}%"></i></span></div>`; });
+  h += '</div>';
+  document.getElementById('mgr-body').innerHTML = h;
+}
+
+/* ---------- Candidates ---------- */
+const fmtLong = iso => new Date(iso + 'T12:00:00').toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
+const ORDER = [];
+REGIONS.forEach(r => r.roles.forEach(role => ORDER.push(r.name + '|' + role)));
+const CANDS = DATA.cands.slice().sort((a, b) =>
+  (ORDER.indexOf(a.region + '|' + a.role) - ORDER.indexOf(b.region + '|' + b.role)) || a.date.localeCompare(b.date));
+
+let recFilter = null, candRegion = null;
+function renderCandidates(regionId){
+  candRegion = regionId;
+  const reg = REGIONS.find(r => r.id === regionId) || null;
+  const regList = reg ? CANDS.filter(x => x.region === reg.name) : CANDS;
+  const list = recFilter ? regList.filter(x => x.rec === recFilter) : regList;
+  let h = '<nav class="filters" aria-label="Region">';
+  h += `<a href="#candidates" aria-current="${reg ? 'false' : 'true'}">All regions <b>${CANDS.length}</b></a>`;
+  REGIONS.forEach(r => {
+    const n = CANDS.filter(x => x.region === r.name).length;
+    h += `<a href="#candidates-${r.id}" aria-current="${reg && reg.id === r.id ? 'true' : 'false'}">${esc(r.name)} <b>${n}</b></a>`;
+  });
+  h += '</nav>';
+
+  const c = {}; REC.forEach(r => c[r.key] = 0); regList.forEach(x => c[x.rec]++);
+  h += '<div class="recfilter" role="group" aria-label="Recommendation">';
+  h += `<button type="button" class="f-all" data-rec="" aria-pressed="${recFilter ? 'false' : 'true'}">All results <b>${regList.length}</b></button>`;
+  h += REC.map(r => `<button type="button" class="${r.cls}" data-rec="${esc(r.key)}" aria-pressed="${recFilter === r.key ? 'true' : 'false'}"><i class="dot ${r.cls.replace('r-', 'd-')}"></i>${esc(r.key)} <b>${c[r.key]}</b></button>`).join('');
+  h += '</div>';
+
+  h += '<div class="table-wrap"><table class="ctable"><thead><tr>';
+  if (!reg) h += '<th scope="col">Region</th>';
+  h += '<th scope="col">Role</th><th scope="col">Date Assessed</th><th scope="col">Candidate</th><th scope="col">Recommendation</th><th scope="col">Results</th></tr></thead><tbody>';
+  if (!list.length) {
+    h += `<tr class="empty"><td colspan="${reg ? 5 : 6}">${regList.length ? 'No candidates match this filter' : 'No candidates yet'}</td></tr>`;
+  } else {
+    let prev = null;
+    list.forEach(x => {
+      const key = reg ? x.role : x.region;
+      const grp = prev !== null && key !== prev; prev = key;
+      h += `<tr${grp ? ' class="grp"' : ''}>`;
+      if (!reg) h += `<td class="nowrap">${esc(x.region)}</td>`;
+      h += `<td class="nowrap">${esc(x.role)}</td><td class="nowrap muted">${fmtLong(x.date)}</td><td class="nowrap">${esc(x.name)}</td>`;
+      h += `<td><span class="rec ${recOf(x.rec).cls}">${esc(x.rec)}</span></td>`;
+      h += `<td><a href="${esc(x.url)}" target="_blank" rel="noopener">Open PDF</a></td></tr>`;
+    });
+  }
+  h += '</tbody></table></div>';
+
+  const gaps = [];
+  (reg ? [reg] : REGIONS).forEach(r => r.roles.forEach(role => {
+    if (role === 'Role #3') { gaps.push(`${r.name} Role #3: no access code yet`); return; }
+    if (!CANDS.some(x => x.region === r.name && x.role === role)) gaps.push(`${r.name} ${role}: no candidates yet`);
+  }));
+  if (gaps.length && !recFilter) h += '<div class="gaps">' + gaps.map(g => `<span>${esc(g)}</span>`).join('') + '</div>';
+  document.getElementById('cand-body').innerHTML = h;
+  document.querySelectorAll('.recfilter [data-rec]').forEach(b => b.addEventListener('click', () => { recFilter = b.dataset.rec || null; renderCandidates(candRegion); }));
+}
+
+/* ---------- Router ---------- */
+let currentView = null;
+function route(){
+  const h = (location.hash || '').replace('#', '');
+  let v = 'specs', region = null, sub = h === 'specs-manager' ? 'manager' : 'roles';
+  if (h === 'candidates' || h.startsWith('candidates-')) { v = 'candidates'; region = h.startsWith('candidates-') ? h.slice(11) : null; }
+  document.querySelectorAll('.view').forEach(el => el.hidden = el.id !== 'view-' + v);
+  document.querySelectorAll('[data-nav]').forEach(a => { if (a.dataset.nav === v) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current'); });
+  if (v === 'candidates') renderCandidates(region);
+  if (v === 'specs') {
+    document.getElementById('pane-roles').hidden = sub !== 'roles';
+    document.getElementById('pane-manager').hidden = sub !== 'manager';
+    document.querySelectorAll('#spec-sub [data-sub]').forEach(a => a.setAttribute('aria-current', String(a.dataset.sub === sub)));
+  }
+  if (v !== currentView) window.scrollTo(0, 0);
+  currentView = v;
+}
+
+/* ---------- Theme ---------- */
+const themeBtn = document.getElementById('theme-btn');
+function setTheme(dark){
+  document.documentElement.classList.toggle('theme-dark', dark);
+  const label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+  themeBtn.setAttribute('aria-label', label); themeBtn.title = label;
+}
+themeBtn.addEventListener('click', () => setTheme(!document.documentElement.classList.contains('theme-dark')));
+setTheme(false);
+
+buildMatrix();
+buildManager();
+document.querySelectorAll('.seg [data-mode]').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+setMode('all');
+window.addEventListener('hashchange', route);
+route();
+</script>
+</body>
+</html>
