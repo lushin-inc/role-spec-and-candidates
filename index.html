@@ -147,12 +147,15 @@ td.cell.diff .tick{background:var(--diff-sel)}
 .spec-link .ext{width:12px;height:12px;flex:none;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
 .mgr-link{margin:0 0 12px;font-weight:500}
 .mgr-wrap{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow-x:auto}
-.matrix.mgr{width:100%}
+#pane-manager{max-width:960px}
+.matrix.mgr{width:100%;table-layout:fixed;font-size:12.5px}
 .matrix.mgr thead th,.matrix.mgr .c-q,.matrix.mgr .c-a{position:static}
+.matrix.mgr thead th{padding:10px 12px}
 .matrix.mgr thead th.corner{text-align:left}
-.matrix.mgr .c-q{min-width:260px;max-width:none;width:40%}
-.matrix.mgr .c-a{min-width:220px;max-width:none;width:auto}
-.matrix.mgr td.cell{width:120px;max-width:120px}
+.matrix.mgr .c-q{min-width:0;max-width:none;width:42%;padding:9px 12px}
+.matrix.mgr .c-a{min-width:0;max-width:none;width:auto;padding:7px 12px;border-right:0}
+.matrix.mgr td.cell,.matrix.mgr thead th.sel-h{width:104px;max-width:104px;border-left:1px solid var(--line-2)}
+@media (max-width:640px){.matrix.mgr{table-layout:auto}.matrix.mgr .c-q{width:auto;min-width:150px}.matrix.mgr td.cell,.matrix.mgr thead th.sel-h{width:72px}}
 .stack-inner{display:flex;flex-direction:column;gap:20px}
 .mgr-head{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 16px}
 .mgr-head h2{font-size:18px;font-weight:600}
@@ -381,8 +384,8 @@ function setMode(mode){
 function buildManager(){
   const m = DATA.mgr;
   let h = `<div class="mgr-head"><h2>UK Sales Manager</h2>${m.url ? `<a class="spec-link" href="${esc(m.url)}" target="_blank" rel="noopener">Open${EXT}</a>` : ''}</div>`;
-  h += '<div class="mgr-wrap"><table class="matrix mgr"><thead><tr class="r2"><th class="corner c-q" scope="col" style="top:0">Question</th><th class="corner c-a" scope="col" style="top:0">Answer</th><th scope="col" class="start" style="top:0">UK Manager</th></tr></thead>';
-  h += `<tbody class="qg"><tr><th scope="row" class="c-q"><span class="qn">1.</span>Title to show on report</th><td class="c-a free">Free-text response</td><td class="cell start"><span class="titlecell">${esc(m.title)}</span></td></tr></tbody>`;
+  h += '<div class="mgr-wrap"><table class="matrix mgr"><thead><tr class="r2"><th class="corner c-q" scope="col" style="top:0">Question</th><th class="corner c-a" scope="col" style="top:0">Answer</th><th scope="col" class="sel-h" style="top:0">Selected</th></tr></thead>';
+  h += `<tbody class="qg"><tr><th scope="row" class="c-q"><span class="qn">1.</span>Title to show on report</th><td class="c-a free">Free-text response</td><td class="cell"><span class="titlecell">${esc(m.title)}</span></td></tr></tbody>`;
   m.answers.forEach(a => {
     const parts = a.raw.split(/\s(?=(?:My number one strategy|My Number One Strategy|The number one strategy))/);
     const label = `<span class="qn">${a.n}.</span>${esc(parts[0])}${parts[1] ? `<span class="qsub">${esc(parts[1])}</span>` : ''}`;
@@ -390,7 +393,7 @@ function buildManager(){
     a.opts.forEach((opt, k) => {
       h += '<tr>';
       if (k === 0) h += `<th scope="rowgroup" class="c-q" rowspan="${a.opts.length}">${label}</th>`;
-      h += `<td class="c-a">${esc(opt)}</td><td class="cell start">${a.sel.includes(k) ? TICK : ''}</td></tr>`;
+      h += `<td class="c-a">${esc(opt)}</td><td class="cell">${a.sel.includes(k) ? TICK : ''}</td></tr>`;
     });
     h += '</tbody>';
   });
